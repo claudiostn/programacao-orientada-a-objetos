@@ -9,3 +9,4 @@ class ClockDisplay:
     
     def __update_display(self):
         self.__display_string = self.__hours.get_display_value() + ":" + self.__minutes.get_display_value()
+    
