@@ -12,3 +12,12 @@ class Estudante:
 
     def get_creditos(self):
         return self.__creditos
+    
+    def set_nome(self, novo_nome):
+        set_nome = novo_nome
+    
+    def set_matricula(self, nova_matricula):
+        self.__matricula = nova_matricula
+    
+    def set_creditos(self, valor):
+        self.__creditos = valor
