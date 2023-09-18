@@ -21,3 +21,6 @@ class Estudante:
     
     def set_creditos(self, valor):
         self.__creditos = valor
+
+    def adicionar_creditos(self, valor):
+        self.__creditos += valor
