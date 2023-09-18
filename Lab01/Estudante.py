@@ -4,7 +4,7 @@ class Estudante:
         self.__matricula = matricula
         self.__creditos = 0
 
-    def get_nome():
+    def get_nome(self):
         return self.__nome
     
     def get_matricula(self):
