@@ -1,3 +1,5 @@
+from numberDisplay import NumberDisplay
+
 class ClockDisplay:
     def __init__(self):
         self.__hours = NumberDisplay()
