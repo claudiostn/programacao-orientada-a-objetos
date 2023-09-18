@@ -11,19 +11,19 @@ class ClockDisplay:
         return self.__display_string
 
     def set_time(self, hour, minute):
-        self.__hours = NumberDisplay(hour)
-        self.__minutes = NumberDisplay(minute)
+        self.__hours.set_value(hour)
+        self.__minutes.set_value(minute)
 
         self.__update_display()
 
     def time_tick(self):
         self.__minutes.increment()
         
-        if self.__minutes.get_display_value() == 0:
+        if self.__minutes.get_value() == 0:
             self.__hours.increment()
 
         self.__update_display()
-        
+
     def __update_display(self):
         self.__display_string = self.__hours.get_display_value() + ":" + self.__minutes.get_display_value()
     
