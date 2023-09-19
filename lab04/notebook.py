@@ -25,3 +25,6 @@ class Notebook:
     def list_notes(self):
         for note in self.__notes:
             print(note)
+
+    def has_notes(self):
+        return self.number_of_notes() != 0
