@@ -14,8 +14,7 @@ class RandomTester:
             self.print_one_random()
 
     def throw_dice(self):
-        number = random.randint(1, 6)
-        print(number)
+        self.print_random_range(1,6)
 
     def print_random_range_max(self, max):
         self.print_random_range(1,max)
