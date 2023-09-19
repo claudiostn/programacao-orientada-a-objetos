@@ -3,9 +3,14 @@ from notebook import Notebook
 def main():
     notes = Notebook()
 
-    notes.store_note("Never Gonna Give You Up")
-    notes.store_note("Big Crack Like Bunda")
-    notes.store_note("Quack Quack")
+    note = input()
+    notes.store_note(note)
+
+    note = input()
+    notes.store_note(note)
+
+    note = "Quack Quack"
+    notes.store_note(note)
 
     notes.show_note(1)
 
