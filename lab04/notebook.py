@@ -11,7 +11,7 @@ class Notebook:
     def show_note(self,note_number):
         if note_number < 0:
             print("Este não é um número de nota válido")
-        elif note_number < self.numberOfNotes():
+        elif note_number < self.number_of_notes():
             print(self.__notes[note_number])
         else :
             print("Este não é um número de nota válido")
