@@ -28,3 +28,6 @@ class Notebook:
 
     def has_notes(self):
         return self.number_of_notes() != 0
+    
+    def compare_note(self, note):
+        return note in self.__notes
