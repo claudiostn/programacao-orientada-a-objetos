@@ -38,3 +38,9 @@ class Notebook:
     def show_note_random(self):
         number = random.randint(0, self.number_of_notes())
         self.show_note(number)
+
+    def show_multi_note_random(self, amount):
+        count = 0
+        while count < amount:
+            self.show_note_random()
+            count += 1
