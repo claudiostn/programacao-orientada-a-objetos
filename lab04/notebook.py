@@ -8,11 +8,11 @@ class Notebook:
     def number_of_notes(self):
         return len(self.__notes)
 
-    def show_note(self,noteNumber):
-        if noteNumber < 0:
+    def show_note(self,note_number):
+        if note_number < 0:
             print("Este não é um número de nota válido")
-        elif noteNumber < self.numberOfNotes():
-            print(self.__notes[noteNumber])
+        elif note_number < self.numberOfNotes():
+            print(self.__notes[note_number])
         else :
             print("Este não é um número de nota válido")
 
