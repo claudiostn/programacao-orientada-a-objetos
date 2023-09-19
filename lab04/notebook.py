@@ -1,3 +1,6 @@
+import random
+
+
 class Notebook:
     def __init__(self):
         self.__notes = []
@@ -8,7 +11,7 @@ class Notebook:
     def number_of_notes(self):
         return len(self.__notes)
 
-    def show_note(self,note_number):
+    def show_note(self, note_number):
         if note_number < 0:
             print("Este não é um número de nota válido")
         elif note_number < self.number_of_notes():
@@ -31,3 +34,7 @@ class Notebook:
     
     def compare_note(self, note):
         return note in self.__notes
+
+    def show_note_random(self):
+        number = random.randint(0, self.number_of_notes())
+        self.show_note(number)
