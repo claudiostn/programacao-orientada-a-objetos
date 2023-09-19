@@ -1,10 +1,7 @@
 from professor import Professor
 
 def main():
-    nome = input()
-    matricula = input()
-    horas = int(input())
-    professor = Professor(nome, matricula, horas)
+    professor = Professor("Lembravitas", "01", 30)
     
     professor.mais_horas(10)
     professor.menos_horas(5)
