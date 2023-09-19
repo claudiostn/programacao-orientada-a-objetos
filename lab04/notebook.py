@@ -23,7 +23,5 @@ class Notebook:
             print("Esta não é uma nota válida")
 
     def list_notes(self):
-        index = 0
-        while index < self.number_of_notes():
-            print(self.__notes[index])
-            index += 1
+        for note in self.__notes:
+            print(note)
