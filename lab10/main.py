@@ -11,5 +11,5 @@ class Application(Frame):
         self.pack()
 
 root = Tk()
-app = Application()
+conteudo = Frame(root)
 root.mainloop()
