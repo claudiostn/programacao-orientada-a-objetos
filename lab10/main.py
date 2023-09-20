@@ -8,7 +8,7 @@ class MainFrame:
         self.rotulo.configure(text="0")
 
         self.rotulo_clica = Label(self.conteudo)
-        self.rotulo_clica.configure(text="")
+        self.rotulo_clica.configure(text="Clique na tela")
 
         self.botao = Button(self.conteudo)
         self.botao.configure(text="Incrementa", command=self.inc)
@@ -29,9 +29,12 @@ class MainFrame:
 
         root.configure(menu=self.menu_principal)
 
-        self.rotulo.pack(side="top")
         self.rotulo_clica.pack()
-        self.botao.pack(side="bottom")
+
+        self.rotulo.pack()
+
+        self.botao.pack()
+
         self.conteudo.pack(fill="both", expand=True)
         self.conteudo.bind("<Button-3>", self.popup)
         self.conteudo.bind("<Button-1>", self.clica)
