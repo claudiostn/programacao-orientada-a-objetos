@@ -10,5 +10,6 @@ class Application(Frame):
         self.bye.pack()
         self.pack()
 
+root = Tk()
 app = Application()
-mainloop()
+root.mainloop()
