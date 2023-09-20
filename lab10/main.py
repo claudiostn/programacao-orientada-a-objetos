@@ -7,6 +7,9 @@ class MainFrame:
         self.rotulo = Label(self.conteudo)
         self.rotulo.configure(text="0")
 
+        self.rotulo_clica = Label(self.conteudo)
+        self.rotulo_clica.configure(text="")
+
         self.botao = Button(self.conteudo)
         self.botao.configure(text="Incrementa", command=self.inc)
         self.botao.configure(background="green")
@@ -27,9 +30,11 @@ class MainFrame:
         root.configure(menu=self.menu_principal)
 
         self.rotulo.pack(side="top")
+        self.rotulo_clica.pack()
         self.botao.pack(side="bottom")
         self.conteudo.pack(fill="both", expand=True)
         self.conteudo.bind("<Button-3>", self.popup)
+        self.conteudo.bind("<Button-1>", self.clica)
 
     def inc(self):
         n = int(self.rotulo.configure("text")[4]) + 1
@@ -52,6 +57,10 @@ class MainFrame:
     
     def popup(self, e):
         self.menu_popup.post(e.x_root, e.y_root)
+
+    def clica(self, e):
+        txt = "Mouse clicado em \n%d, %d"%(e.x,e.y)
+        self.rotulo_clica.configure(text=txt)
 
 root = Tk()
 app = MainFrame(root)
