@@ -11,6 +11,17 @@ class MainFrame:
         self.botao.configure(text="Hello, World!")
         self.botao.configure(background="green")
 
+        self.menu_principal = Menu(root)
+
+        self.menu_arquivo = Menu(self.menu_principal)
+        self.menu_arquivo.add_command(label="Abrir")
+        self.menu_arquivo.add_command(label="Salvar")
+        
+        self.menu_principal.add_cascade(label="Arquivo", menu=self.menu_arquivo)
+        self.menu_principal.add_command(label="Ajuda")
+        
+        root.configure(menu=self.menu_principal)
+
         self.rotulo.pack()
         self.botao.pack()
         self.conteudo.pack()
