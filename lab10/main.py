@@ -5,10 +5,10 @@ class MainFrame:
         self.conteudo = Frame(root)
 
         self.rotulo = Label(self.conteudo)
-        self.rotulo.configure(text="Eu sou um rótulo")
+        self.rotulo.configure(text="0")
 
         self.botao = Button(self.conteudo)
-        self.botao.configure(text="Hello, World!")
+        self.botao.configure(text="Incrementa", command=self.inc)
         self.botao.configure(background="green")
 
         self.menu_principal = Menu(root)
@@ -25,6 +25,10 @@ class MainFrame:
         self.rotulo.pack(side="top", fill="both", expand=True)
         self.botao.pack(side="bottom", fill="both", expand=True)
         self.conteudo.pack(fill="both", expand=True)
+
+    def inc(self):
+        n = int(self.rotulo.configure("text")[4]) + 1
+        self.rotulo.configure(text=str(n))
 
 root = Tk()
 app = MainFrame(root)
