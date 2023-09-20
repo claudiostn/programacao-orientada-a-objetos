@@ -11,9 +11,9 @@ class MainFrame:
         self.botao.configure(text="Incrementa", command=self.inc)
         self.botao.configure(background="green")
 
-        self.menu_principal = Menu(root)
+        self.menu_principal = Menu(root, tearoff=0)
 
-        self.menu_arquivo = Menu(self.menu_principal)
+        self.menu_arquivo = Menu(self.menu_principal, tearoff=0)
         self.menu_arquivo.add_command(label="Abrir", command=self.abrir)
         self.menu_arquivo.add_command(label="Salvar", command=self.salvar)
 
