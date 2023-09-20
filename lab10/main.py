@@ -2,7 +2,7 @@ from tkinter import *
 
 class MainFrame:
     def __init__(self, root):
-        self.conteudo = Frame(root)
+        self.conteudo = Frame(root, width=200, height=200)
 
         self.rotulo = Label(self.conteudo)
         self.rotulo.configure(text="0")
@@ -20,11 +20,16 @@ class MainFrame:
         self.menu_principal.add_cascade(label="Arquivo", menu=self.menu_arquivo)
         self.menu_principal.add_command(label="Ajuda", command=self.ajuda)
         
+        self.menu_popup = Menu(root, tearoff=0)
+        self.menu_popup.add_command(label="Alo", command=self.alo)
+        self.menu_popup.add_command(label="Tchau", command=self.tchau)
+
         root.configure(menu=self.menu_principal)
 
-        self.rotulo.pack(side="top", fill="both", expand=True)
-        self.botao.pack(side="bottom", fill="both", expand=True)
+        self.rotulo.pack(side="top")
+        self.botao.pack(side="bottom")
         self.conteudo.pack(fill="both", expand=True)
+        self.conteudo.bind("<Button-3>", self.popup)
 
     def inc(self):
         n = int(self.rotulo.configure("text")[4]) + 1
@@ -38,6 +43,15 @@ class MainFrame:
 
     def ajuda(self):
         print("Ajuda")
+
+    def alo(self):
+        print("Alo!")
+
+    def tchau(self):
+        print("Tchau!")
+    
+    def popup(self, e):
+        self.menu_popup.post(e.x_root, e.y_root)
 
 root = Tk()
 app = MainFrame(root)
