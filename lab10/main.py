@@ -14,11 +14,11 @@ class MainFrame:
         self.menu_principal = Menu(root)
 
         self.menu_arquivo = Menu(self.menu_principal)
-        self.menu_arquivo.add_command(label="Abrir")
-        self.menu_arquivo.add_command(label="Salvar")
+        self.menu_arquivo.add_command(label="Abrir", command=self.abrir)
+        self.menu_arquivo.add_command(label="Salvar", command=self.salvar)
 
         self.menu_principal.add_cascade(label="Arquivo", menu=self.menu_arquivo)
-        self.menu_principal.add_command(label="Ajuda")
+        self.menu_principal.add_command(label="Ajuda", command=self.ajuda)
         
         root.configure(menu=self.menu_principal)
 
@@ -29,6 +29,15 @@ class MainFrame:
     def inc(self):
         n = int(self.rotulo.configure("text")[4]) + 1
         self.rotulo.configure(text=str(n))
+    
+    def abrir(self):
+        print("Arquivo aberto")
+    
+    def salvar(self):
+        print("Arquivo salvo")
+
+    def ajuda(self):
+        print("Ajuda")
 
 root = Tk()
 app = MainFrame(root)
