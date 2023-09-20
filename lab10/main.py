@@ -16,15 +16,15 @@ class MainFrame:
         self.menu_arquivo = Menu(self.menu_principal)
         self.menu_arquivo.add_command(label="Abrir")
         self.menu_arquivo.add_command(label="Salvar")
-        
+
         self.menu_principal.add_cascade(label="Arquivo", menu=self.menu_arquivo)
         self.menu_principal.add_command(label="Ajuda")
         
         root.configure(menu=self.menu_principal)
 
-        self.rotulo.pack()
-        self.botao.pack()
-        self.conteudo.pack()
+        self.rotulo.pack(side="top", fill="both", expand=True)
+        self.botao.pack(side="bottom", fill="both", expand=True)
+        self.conteudo.pack(fill="both", expand=True)
 
 root = Tk()
 app = MainFrame(root)
